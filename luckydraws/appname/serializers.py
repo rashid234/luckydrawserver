@@ -7,10 +7,12 @@ User = get_user_model()
 
 class UserRegister(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type': 'password'}, write_only=True)
+    phonenumber = serializers.CharField(style={'input_type': 'phonenumber'}, write_only=True)
+    roles = serializers.CharField(style={'input_type': 'roles'}, write_only=True)
 
     class Meta:
         model = User
-        fields = ["username", "password", "email", "password2"]
+        fields = ["username", "password", "email", "password2","phonenumber","roles"]
 
     def validate(self, data):
         # Ensure that the password and password2 fields match

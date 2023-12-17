@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'luckydraws',
+    'appname',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders'
@@ -78,6 +78,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'luckydraws.wsgi.application'
+AUTH_USER_MODEL = 'appname.CustomUser'
+
 
 
 # Database

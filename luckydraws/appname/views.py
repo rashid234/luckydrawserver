@@ -7,6 +7,8 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+
 
 # Create your views here.
 class register(APIView):
@@ -24,9 +26,8 @@ class register(APIView):
             data=serializer.errors
         return Response(data)
 
-
 class leads(APIView):
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     
     def get(self,request):
         content = {
